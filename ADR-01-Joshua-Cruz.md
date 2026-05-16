@@ -19,3 +19,9 @@ El objetivo de este sistema es digitalizar dicha interacción mediante una plata
 Este proyecto se desarrolla bajo el entorno .NET, garantizando una arquitectura de datos robusta y una ejecución fiable que asegure la integridad de la información al momento de su entrega y puesta en producción.
 
 ---
+
+
+## Decisión
+
+Se ha seleccionado un ecosistema basado en **ASP.NET Core** bajo la arquitectura **Modelo-Vista-Controlador (MVC)**. Para la base de datos se emplea **PostgreSQL**, aprovechando su capacidad para manejar datos numéricos. La lógica de acceso a datos se implementa con **Entity Framework Core** mediante un enfoque de desarrollo basado en código, mientras que la interfaz visual utiliza **Razor Pages** y **Tailwind CSS** para consolidar una estética oscura y minimalista de alto rendimiento.
+
