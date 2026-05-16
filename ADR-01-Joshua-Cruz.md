@@ -29,3 +29,11 @@ Se ha seleccionado un ecosistema basado en **ASP.NET Core** bajo la arquitectura
 ## Justificación 
 
 La elección de esta ruta técnica responde principalmente a la necesidad de garantizar precisión absoluta en los cálculos de rendimiento. Al procesar los algoritmos de fatiga y las proyecciones de carga directamente en el servidor, aseguramos que los resultados sean exactos y consistentes, evitando los errores de redondeo que suelen ocurrir cuando los cálculos dependen del navegador del dispositivo móvil. Esta arquitectura se complementa con el patrón MVC, el cual permite una organización limpia donde la lógica de los levantamientos y la interfaz visual evolucionan de forma independiente, facilitando así la colaboración en el código sin generar conflictos técnicos. Finalmente, una característica esencial para que el atleta pueda registrar sus datos de manera fluida durante los breves periodos de descanso en el gimnasio.
+
+---
+## Alternativas
+
+Se evaluaron opciones como el uso de PHP con Laravel o el desarrollo de una aplicación de página única con React (MERN Stack); sin embargo, se descartaron para priorizar el tipado fuerte de .NET y evitar la complejidad innecesaria en la sincronización de estados que presentan otros marcos de trabajo. Asimismo, se evitó una arquitectura de microservicios para prevenir latencias innecesarias, manteniendo un sistema monolítico bien estructurado que garantiza la fiabilidad requerida para este dominio deportivo.
+
+---
+
