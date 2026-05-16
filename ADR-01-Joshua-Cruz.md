@@ -44,5 +44,4 @@ La arquitectura actual garantiza una separación clara de responsabilidades, fac
 ---
 
 ## 📐 Visualización del Sistema
-
 ![Diagrama de Arquitectura Grind Core](images/diagrama-grind-core.png)
