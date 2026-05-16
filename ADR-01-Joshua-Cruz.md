@@ -1,12 +1,10 @@
-# ADR-01: Arquitectura – Grind Core
+# ADR-01: Definición de la Arquitectura – Grind Core
 
-> **Estado:** `PROPUESTO`
-> 
-> **Autor:** Joshua Cruz
-> 
-> **Fecha:** Mayo 2026
-> 
-> **Dominio:** Gestión de Rendimiento en Gym y Powerlifting
+| Campo  | Valor |
+|--------|-------|
+| Autor  | Joshua Cruz |
+| Fecha  | 15/05/2026 |
+| Estado | `Propuesto` |
 
 ---
 
@@ -26,21 +24,34 @@ Se ha seleccionado un ecosistema basado en **ASP.NET Core** bajo la arquitectura
 
 ---
 
-## Justificación 
+### ¿Por qué?
 
-La elección de esta ruta técnica responde principalmente a la necesidad de garantizar precisión absoluta en los cálculos de rendimiento. Al procesar los algoritmos de fatiga y las proyecciones de carga directamente en el servidor, aseguramos que los resultados sean exactos y consistentes, evitando los errores de redondeo que suelen ocurrir cuando los cálculos dependen del navegador del dispositivo móvil. Esta arquitectura se complementa con el patrón MVC, el cual permite una organización limpia donde la lógica de los levantamientos y la interfaz visual evolucionan de forma independiente, facilitando así la colaboración en el código sin generar conflictos técnicos. Finalmente, una característica esencial para que el atleta pueda registrar sus datos de manera fluida durante los breves periodos de descanso en el gimnasio.
-
----
-## Alternativas
-
-Se evaluaron opciones como el uso de PHP con Laravel o el desarrollo de una aplicación de página única con React (MERN Stack); sin embargo, se descartaron para priorizar el tipado fuerte de .NET y evitar la complejidad innecesaria en la sincronización de estados que presentan otros marcos de trabajo. Asimismo, se evitó una arquitectura de microservicios para prevenir latencias innecesarias, manteniendo un sistema monolítico bien estructurado que garantiza la fiabilidad requerida para este dominio deportivo.
+La elección responde a la necesidad de gestionar cálculos de rendimiento de forma segura en el servidor, evitando errores de precisión que ocurren en el cliente. El patrón MVC permite separar la lógica de los algoritmos de fuerza (Modelos) de la interfaz de usuario (Vistas), facilitando el mantenimiento. Además, .NET ofrece un tipado fuerte que reduce errores en la gestión de datos críticos de los atletas.
 
 ---
 
-##  Impacto y Proyecciones
+### Alternativas consideradas
 
-La arquitectura actual garantiza una separación clara de responsabilidades, facilitando el mantenimiento futuro y la posible integración de módulos de análisis avanzados o dispositivos vestibles. Aunque el sistema realiza recargas de página controladas, se ha previsto el uso de scripts específicos para optimizar la interactividad en funciones críticas como cronómetros de descanso. Finalmente, la base técnica actual está preparada para exponer una interfaz de programación (API) si el crecimiento del proyecto requiere una transición hacia aplicaciones móviles nativas.
+| Alternativa | Por qué la descarté |
+|-------------|---------------------|
+| **PHP / Laravel** | Aunque es rápido para prototipar, prefiero el tipado fuerte de C# para manejar los cálculos de rendimiento con mayor seguridad. |
+| **MERN Stack (React/Node)** | La sincronización de estados complejos en el frontend añadiría una capa de dificultad innecesaria para los requerimientos actuales del proyecto. |
+| **Arquitectura de Microservicios** | Introduciría una latencia y complejidad de red innecesaria para un sistema que, en esta etapa, funciona mejor como un monolito bien estructurado. |
 
+---
+
+## Consecuencias
+
+**Lo que gano:**
+
+* **Consecuencia Técnica:** Una arquitectura altamente organizada donde la lógica de negocio (fórmulas de RPE y 1RM) está centralizada, lo que facilita el mantenimiento y la escalabilidad hacia una API futura.
+* **Consecuencia sobre el Proceso:** El uso de .NET y MVC permite un flujo de trabajo estructurado en GitHub, facilitando la detección de errores y la implementación de nuevas funcionalidades sin romper el diseño visual.
+
+**Lo que sacrifico o asumo:**
+
+* **Limitación Técnica:** El sistema requiere recargas de página para procesar ciertos cambios de estado, lo cual es menos fluido que una aplicación Single Page Application (SPA), aunque se compensa con la velocidad de Tailwind.
+* **Deuda o Riesgo:** Si la base de usuarios crece exponencialmente, el servidor monolítico podría requerir un escalado vertical, lo que implicaría costos adicionales de infraestructura más adelante.
+  
 ---
 
 ## Diagrama
