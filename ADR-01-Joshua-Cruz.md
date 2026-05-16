@@ -40,3 +40,9 @@ Se evaluaron opciones como el uso de PHP con Laravel o el desarrollo de una apli
 ##  Impacto y Proyecciones
 
 La arquitectura actual garantiza una separación clara de responsabilidades, facilitando el mantenimiento futuro y la posible integración de módulos de análisis avanzados o dispositivos vestibles. Aunque el sistema realiza recargas de página controladas, se ha previsto el uso de scripts específicos para optimizar la interactividad en funciones críticas como cronómetros de descanso. Finalmente, la base técnica actual está preparada para exponer una interfaz de programación (API) si el crecimiento del proyecto requiere una transición hacia aplicaciones móviles nativas.
+
+---
+
+## 📐 Visualización del Sistema
+
+![Diagrama de Arquitectura Grind Core](images/diagrama-grind-core.png)
