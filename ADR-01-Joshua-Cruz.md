@@ -20,8 +20,12 @@ Este proyecto se desarrolla bajo el entorno .NET, garantizando una arquitectura 
 
 ---
 
-
 ## Decisión
 
 Se ha seleccionado un ecosistema basado en **ASP.NET Core** bajo la arquitectura **Modelo-Vista-Controlador (MVC)**. Para la base de datos se emplea **PostgreSQL**, aprovechando su capacidad para manejar datos numéricos. La lógica de acceso a datos se implementa con **Entity Framework Core** mediante un enfoque de desarrollo basado en código, mientras que la interfaz visual utiliza **Razor Pages** y **Tailwind CSS** para consolidar una estética oscura y minimalista de alto rendimiento.
 
+---
+
+## Justificación 
+
+La elección de esta ruta técnica responde principalmente a la necesidad de garantizar precisión absoluta en los cálculos de rendimiento. Al procesar los algoritmos de fatiga y las proyecciones de carga directamente en el servidor, aseguramos que los resultados sean exactos y consistentes, evitando los errores de redondeo que suelen ocurrir cuando los cálculos dependen del navegador del dispositivo móvil. Esta arquitectura se complementa con el patrón MVC, el cual permite una organización limpia donde la lógica de los levantamientos y la interfaz visual evolucionan de forma independiente, facilitando así la colaboración en el código sin generar conflictos técnicos. Finalmente, una característica esencial para que el atleta pueda registrar sus datos de manera fluida durante los breves periodos de descanso en el gimnasio.
