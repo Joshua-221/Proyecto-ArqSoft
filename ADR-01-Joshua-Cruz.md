@@ -1,1 +1,21 @@
+# ADR-01: Arquitectura – Grind Core
 
+> **Estado:** `PROPUESTO`
+> 
+> **Autor:** Joshua Cruz
+> 
+> **Fecha:** Mayo 2026
+> 
+> **Dominio:** Gestión de Rendimiento en Gym y Powerlifting
+
+---
+
+## Contexto
+
+En el ámbito del deporte de alto rendimiento, como el Powerlifting y el entrenamiento de fuerza avanzado, la gestión de la programación presenta un desafío logístico crítico que suele subestimarse. Los entrenadores frecuentemente gestionan una carga de atletas que supera su capacidad de organización manual, lo que convierte el seguimiento de rutinas en un proceso confuso y propenso a errores. Esta problemática se intensifica al intentar centralizar variables fundamentales como el registro de pesos, repeticiones, Esfuerzo Percibido (RPE), totales acumulados y el análisis de datos semanales o mensuales de cada individuo.
+
+El objetivo de este sistema es digitalizar dicha interacción mediante una plataforma web donde atletas y entrenadores converjan en un ecosistema eficiente. El atleta dispone de una interfaz para adjuntar su rendimiento diario, permitiéndole consultar su intensidad máxima estimada (1RM) mediante una calculadora integrada que el entrenador supervisa en tiempo real. A su vez, el preparador cuenta con facultades para editar rutinas, configurar planes de entrenamiento en cualquier momento, consultar históricos de carga y añadir retroalimentación técnica sobre los ejercicios realizados.
+
+Este proyecto se desarrolla bajo el entorno .NET, garantizando una arquitectura de datos robusta y una ejecución fiable que asegure la integridad de la información al momento de su entrega y puesta en producción.
+
+---
